@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager }: 
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager }: 
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -23,6 +23,11 @@
         qmbocks = lib.nixosSystem {
           inherit system;
           modules = [ ./hosts/qmbocks/configuration.nix ];
+        };
+      nixosConfigurations = {
+        lapeaux = lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/lapeaux/configuration.nix ];
         };
       };
   };
