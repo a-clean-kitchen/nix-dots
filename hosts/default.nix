@@ -30,11 +30,11 @@ in {
         home-manager.extraSpecialArgs = {
           inherit user doom-emacs;
           host = {
-            hostName = "xbocks";     #For Xorg iGPU  | Videocard 
+            hostName = "xbocks";
           };
-        };                                                  # Pass flake variable
+        };
         home-manager.users.${user} = {
-          imports = [(import ../home/.config)] ++ [(import ./xbocks/home.nix)];
+          imports = [(import ../home)] ++ [(import ./xbocks/home.nix)];
         };
       }
     ];
@@ -59,9 +59,9 @@ in {
 #         home-manager.extraSpecialArgs = {
 #           inherit user doom-emacs;
 #           host = {
-#             hostName = "lapeaux";     #For Xorg iGPU  | Videocard 
+#             hostName = "lapeaux";
 #           };
-#         };                                                  # Pass flake variable
+#         };
 #         home-manager.users.${user} = {
 #           imports = [(import ../home)] ++ [(import ./lapeaux/home.nix)];
 #         };

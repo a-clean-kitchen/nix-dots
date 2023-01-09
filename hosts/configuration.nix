@@ -15,13 +15,13 @@
 { config, lib, pkgs, inputs, user, location, ... }:
 
 {
-  imports =
-    [(import ../modules/editors/emacs/native.nix)] ++  # Native doom emacs instead of nix-community flake
-    ( import ../modules/shell );
+  # imports =
+  #   [(import ../modules/editors/emacs/native.nix)] ++  # Native doom emacs instead of nix-community flake
+  #   ( import ../modules/shell );
 
   users.users.${user} = {                   # System User
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" ];
+    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" ];
     shell = pkgs.zsh;
   };
   security.sudo.wheelNeedsPassword = false;
@@ -53,15 +53,26 @@
     })
   ];
 
+  programs.hyprland.enable = true;
+
   environment = {
+    loginShellInit = ''
+      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+        exec Hyprland
+      fi
+    '';                                   # Will automatically open Hyprland when logged into tty1
+
     variables = {
       TERMINAL = "kitty";
       EDITOR = "nvim";
       VISUAL = "nvim";
+      XDG_CURRENT_DESKTOP="Hyprland";
+      XDG_SESSION_TYPE="wayland";
+      XDG_SESSION_DESKTOP="Hyprland";
     };
     systemPackages = with pkgs; [           # Default packages installed system-wide
       vim tmux nano
-      git
+      git jq
       killall
       pciutils
       usbutils

@@ -6,15 +6,14 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
   # Bootloader.
   boot = {                                      # Boot options
     kernelPackages = pkgs.linuxPackages_latest;
-    #initrd.kernelModules = [ "amdgpu" ];       # Video drivers
-    
+
     loader = {                                  # For legacy boot:
       systemd-boot = {
         enable = true;

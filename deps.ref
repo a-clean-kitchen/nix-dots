@@ -1,20 +1,21 @@
 - hyprland-git
-waybar-hyprland-git
-cava
-waybar-mpris-git
+- waybar-hyprland-git
+- cava
+- kitty
+- fish
+- wofi
+- xdg-desktop-portal-wlr
+- tty-clock-git
+
+- grim
+- slurp
+- starship
+
+- dunst
+- wl-clipboard
+- swaylock-effects-git
+- jq
+
 python
 rustup
-kitty
-fish
-wofi
-xdg-desktop-portal-wlr
-tty-clock-git
 swaylockd
-grim
-slurp
-pokemon-colorscripts-git
-starship
-jq
-dunst
-wl-clipboard
-swaylock-effects-git

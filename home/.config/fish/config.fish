@@ -1,6 +1,5 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-	pokemon-colorscripts -r --no-title &
 	starship init fish | source &
 	thefuck --alias | source &
 	~/.config/fish/tty.sh &
@@ -79,46 +78,42 @@ end
 
 # User abbreviations
 abbr -a -g ytmp3 'youtube-dl --extract-audio --audio-format mp3'				# Convert/Download YT videos as mp3
-abbr -a -g cls 'clear'																								# Clear
-abbr -a -g h 'history'																								# Show history
-abbr -a -g upd 'paru -Syu --noconfirm'																								# Update everything
-abbr -a -g please 'sudo'																						# Polite way to sudo
-abbr -a -g fucking 'sudo'																						# Rude way to sudo
-abbr -a -g sayonara 'shutdown now'																	# Epic way to shutdown
-abbr -a -g stahp 'shutdown now'																		# Panik - stonk man
-abbr -a -g ar 'echo "awesome.restart()" | awesome-client'							# Reload AwesomeWM
-abbr -a -g shinei 'kill -9'																						# Kill ala DIO
-abbr -a -g kv 'kill -9 (pgrep vlc)'																			# Kill zombie vlc
-abbr -a -g priv 'fish --private'																				# Fish incognito mode
-abbr -a -g sshon 'sudo systemctl start sshd.service'										# Start ssh service
-abbr -a -g sshoff 'sudo systemctl stop sshd.service'										# Stop ssh service
-abbr -a -g untar 'tar -zxvf'																					# Untar
-abbr -a -g genpass 'openssl rand -base64 20'													# Generate a random, 20-charactered password
-abbr -a -g sha 'shasum -a 256'																			# Test checksum
-abbr -a -g cn 'ping -c 5 8.8.8.8'																			# Ping google, checking network
-abbr -a -g ipe 'curl ifconfig.co'																				# Get external IP address
-abbr -a -g ips 'ip link show'																					# Get network interfaces information
-abbr -a -g wloff 'rfkill block wlan'																			# Block wlan, killing wifi connection
-abbr -a -g wlon 'rfkill unblock wlan'																		# Unblock wlan, start wifi connection
-abbr -a -g ff 'firefox'																								#
+abbr -a -g cls 'clear'# Clear
+abbr -a -g h 'history'# Show history
+abbr -a -g upd 'paru -Syu --noconfirm'# Update everything
+abbr -a -g please 'sudo'# Polite way to sudo
+abbr -a -g fucking 'sudo'# Rude way to sudo
+abbr -a -g sayonara 'shutdown now'# Epic way to shutdown
+abbr -a -g shinei 'kill -9'# Kill ala DIO
+abbr -a -g priv 'fish --private'# Fish incognito mode
+abbr -a -g sshon 'sudo systemctl start sshd.service'# Start ssh service
+abbr -a -g sshoff 'sudo systemctl stop sshd.service'# Stop ssh service
+abbr -a -g untar 'tar -zxvf'# Untar
+abbr -a -g genpass 'openssl rand -base64 20'# Generate a random, 20-charactered password
+abbr -a -g sha 'shasum -a 256'# Test checksum
+abbr -a -g cn 'ping -c 5 8.8.8.8'# Ping google, checking network
+abbr -a -g ipe 'curl ifconfig.co'# Get external IP address
+abbr -a -g ips 'ip link show'# Get network interfaces information
+abbr -a -g wloff 'rfkill block wlan'# Block wlan, killing wifi connection
+abbr -a -g wlon 'rfkill unblock wlan'# Unblock wlan, start wifi connection
 
 # Source plugins
 # Useful plugins: archlinux bang-bang cd colorman sudope vcs
-if test -d "$HOME/.local/share/omf/pkg/colorman/"
-	source ~/.local/share/omf/pkg/colorman/init.fish
-end
+# if test -d "$HOME/.local/share/omf/pkg/colorman/"
+# 	source ~/.local/share/omf/pkg/colorman/init.fish
+# end
 
 # Make su launch fish
 function su
    command su --shell=/usr/bin/fish $argv
 end
 
-function wa
-    set -f APPID "6HV6YJ-QGK36VKQQJ" # Get one at https://products.wolframalpha.com/api/
-    echo $argv | string escape --style=url | read question_string
-    set -f url "https://api.wolframalpha.com/v1/result?appid="$APPID"&i="$question_string
-    curl -s $url
-end
+# function wa
+#     set -f APPID "6HV6YJ-QGK36VKQQJ" # Get one at https://products.wolframalpha.com/api/
+#     echo $argv | string escape --style=url | read question_string
+#     set -f url "https://api.wolframalpha.com/v1/result?appid="$APPID"&i="$question_string
+#     curl -s $url
+# end
 
 # Get terminal emulator
 # set TERM_EMULATOR (ps -aux | grep (ps -p $fish_pid -o ppid=) | awk 'NR==1{print $11}')
