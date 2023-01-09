@@ -24,7 +24,8 @@
       $scripts/wall $config/wallpapers/cloud.png &
 
       # effects
-      $scripts/rgb &
+      # Keeping this down until I turn rgb-rs into a flake
+      # $scripts/rgb &
 
       # other
       /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -32,4 +33,15 @@
     '';
     executable = true;
   };
+
+  xdg.configFile."hypr/wallpapers" = {
+    source = ./wallpapers;
+    recursive = true;
+  };
+
+  imports = [
+    ./scripts.nix
+    ./component
+  ];
+
 }

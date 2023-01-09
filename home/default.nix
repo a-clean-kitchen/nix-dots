@@ -3,7 +3,7 @@ let
 
 in
 {
-  imports = (import ./.config)
+  imports = (import ./.config);
 
   home = {
     username = "${user}";
