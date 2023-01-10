@@ -20,7 +20,8 @@
         configurationLimit = 5;                 # Limit the amount of configurations
       };
       efi =  {
-        canTouchEfiVariables = false;
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
       };
       timeout = 1;                              # Grub auto select time
     };
