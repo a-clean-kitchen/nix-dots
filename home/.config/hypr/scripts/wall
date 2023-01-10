@@ -1,4 +1,5 @@
-#!/usr/bin/bash
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash
 
 swww_fork=~/.config/hypr/scripts/tools/swww
 $swww_fork init
