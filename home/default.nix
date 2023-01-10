@@ -21,7 +21,7 @@ in
       slurp
       starship
       dunst
-      swaylock
+      # swaylock
       swaylock-effects
       wl-clipboard
     ];
