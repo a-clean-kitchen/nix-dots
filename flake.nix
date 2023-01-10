@@ -38,7 +38,7 @@
         import ./hosts {
           inherit (nixpkgs) lib;
           inherit inputs;
-          inherit (inputs) home-manager nixpkgs nur home-manager doom-emacs hyprland;
+          inherit (inputs) nixpkgs nur home-manager doom-emacs hyprland;
           inherit user;
         }
       );
