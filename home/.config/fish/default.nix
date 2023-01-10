@@ -22,5 +22,5 @@
   xdg.configFile."fish/tty.sh" = {
     source = ./tty.sh;
     executable = true;
-  }
+  };
 }

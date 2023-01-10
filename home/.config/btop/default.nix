@@ -70,6 +70,6 @@
       show_battery = True;
       selected_battery = "Auto";
       log_level = "WARNING";
+    };
   };
-  }
 }
