@@ -34,13 +34,13 @@
     let
       user = "qm";
     in {
-      nixosConfigurations = {
+      nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
           inherit inputs;
           inherit (inputs) home-manager nixpkgs nur home-manager doom-emacs hyprland;
           inherit user;
-        };
-      };
+        }
+      );
   };
 }
