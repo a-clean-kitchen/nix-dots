@@ -21,7 +21,7 @@ in {
     modules = [
       nur.nixosModules.nur
       hyprland.nixosModules.default
-      ./xbocks
+      ./xbocks/configuration.nix
       ./configuration.nix
 
       home-manager.nixosModules.home-manager {
@@ -34,7 +34,7 @@ in {
           };
         };
         home-manager.users.${user} = {
-          imports = [(import ../home)] ++ [(import ./xbocks/home.nix)];
+          imports = [(import ../home)] ;
         };
       }
     ];
