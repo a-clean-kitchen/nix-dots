@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 {
-  xdg.configFile."hypr/hyperland.conf" = {
-    source = ./hyperland.conf;
+  xdg.configFile."hypr/hyprland.conf" = {
+    source = ./hyprland.conf;
   };
 
   xdg.configFile."hypr/autostart" = {
