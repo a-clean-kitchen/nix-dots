@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash
 
 if [ "$TERM" = "linux" ]; then
 	printf %b '\e]P01E1E2E' # set background color to "Base"
