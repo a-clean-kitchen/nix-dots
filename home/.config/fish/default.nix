@@ -144,7 +144,7 @@
     plugins = [
       {
         name = "decors/fish-colored-man";
-        src = pkgs.fetchFromGithub {
+        src = pkgs.fetchFromGitHub {
           owner = "decors";
           repo = "fish-colored-man";
           rev = "1ad8fff696d48c8bf173aa98f9dff39d7916de0e";
@@ -154,7 +154,7 @@
 
       {
         name = "catpuccin/fish";
-        src = pkgs.fetchFromGithub {
+        src = pkgs.fetchFromGitHub {
           owner = "catpuccin";
           repo = "fish";
           rev = "b90966686068b5ebc9f80e5b90fdf8c02ee7a0ba";
