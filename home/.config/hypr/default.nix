@@ -10,7 +10,7 @@
       #!/usr/bin/bash
 
       # variables
-      config=${xdg.configHome}/hypr
+      config=~/.config/hypr
       scripts=$config/scripts
 
       # notification daemon
