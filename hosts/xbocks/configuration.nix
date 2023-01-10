@@ -21,7 +21,6 @@
       };
       efi =  {
         canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
       };
       timeout = 1;                              # Grub auto select time
     };
