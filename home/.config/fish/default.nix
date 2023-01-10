@@ -148,7 +148,7 @@
           owner = "decors";
           repo = "fish-colored-man";
           rev = "1ad8fff696d48c8bf173aa98f9dff39d7916de0e";
-          sha256 = "ddeb28a7b6a1f0ec6dae40c636e5ca4908ad160a";
+          sha256 = "ddeb28a7b6a1f0ec6dae40c636e5ca4908ad160a000";
         };
       }
 
@@ -158,7 +158,7 @@
           owner = "catpuccin";
           repo = "fish";
           rev = "b90966686068b5ebc9f80e5b90fdf8c02ee7a0ba";
-          sha256 = "ddeb28a7b6a1f0ec6dae40c636e5ca4908ad160a";
+          sha256 = "ddeb28a7b6a1f0ec6dae40c636e5ca4908ad160a000";
         };
       }
     ];
