@@ -141,27 +141,29 @@
       set MOZ_ENABLE_WAYLAND 1
       set XDG_CURRENT_DESKTOP sway
     '';
-    plugins = [
-      {
-        name = "decors/fish-colored-man";
-        src = pkgs.fetchFromGitHub {
-          owner = "decors";
-          repo = "fish-colored-man";
-          rev = "1ad8fff696d48c8bf173aa98f9dff39d7916de0e";
-          sha256 = "17cmy0s1908s2rqs0zwr05f3541nqm2pg08n2xn97g2k3yimdg5q";
-        };
-      }
+    # Neither plugin has releases so I need to find another way of
+    # installing them
+    # plugins = [
+    #   {
+    #     name = "decors/fish-colored-man";
+    #     src = pkgs.fetchFromGitHub {
+    #       owner = "decors";
+    #       repo = "fish-colored-man";
+    #       rev = "1ad8fff696d48c8bf173aa98f9dff39d7916de0e";
+    #       sha256 = "17cmy0s1908s2rqs0zwr05f3541nqm2pg08n2xn97g2k3yimdg5q";
+    #     };
+    #   }
 
-      {
-        name = "catpuccin/fish";
-        src = pkgs.fetchFromGitHub {
-          owner = "catpuccin";
-          repo = "fish";
-          rev = "b90966686068b5ebc9f80e5b90fdf8c02ee7a0ba";
-          sha256 = "17cmy0s1908s2rqs0zwr05f3541nqm2pg08n2xn97g2k3yimdg5q";
-        };
-      }
-    ];
+    #   {
+    #     name = "catpuccin/fish";
+    #     src = pkgs.fetchFromGitHub {
+    #       owner = "catpuccin";
+    #       repo = "fish";
+    #       rev = "b90966686068b5ebc9f80e5b90fdf8c02ee7a0ba";
+    #       sha256 = "17cmy0s1908s2rqs0zwr05f3541nqm2pg08n2xn97g2k3yimdg5q";
+    #     };
+    #   }
+    # ];
     functions = {
       "man" = {
         wraps = "man";
