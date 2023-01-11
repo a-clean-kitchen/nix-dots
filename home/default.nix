@@ -1,4 +1,4 @@
-{ config, lib, pkgs, user, ... }:
+{ config, lib, pkgs, user, rgb, swww, ... }:
 let
 
 in
@@ -10,6 +10,9 @@ in
     homeDirectory = "/home/${user}";
 
     packages = with pkgs; [
+      # They're in.
+      rgb swww
+
       waybar
       cava
       kitty

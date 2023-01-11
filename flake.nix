@@ -21,16 +21,27 @@
     };
 
     hyprland = {
-      url = "github:vaxerski/Hyprland";
+      url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nur = {
       url = "github:nix-community/NUR";                                   # NUR Packages
     };
+
+    # bastard, stolen, retroflaked software
+    swww = {
+      url = "github:a-clean-kitchen/swww";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    rgb = {
+      url = "github:a-clean-kitchen/rgb-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland }: 
+  outputs = inputs @ { self, nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland, swww, rgb }: 
     let
       user = "qm";
     in {
@@ -38,7 +49,7 @@
         import ./hosts {
           inherit (nixpkgs) lib;
           inherit inputs;
-          inherit (inputs) nixpkgs nur home-manager doom-emacs hyprland;
+          inherit (inputs) sww rgb nixpkgs nur home-manager doom-emacs hyprland;
           inherit user;
         }
       );

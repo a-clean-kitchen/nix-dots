@@ -1,4 +1,15 @@
-{ lib, inputs, user, nur, nixpkgs, home-manager, doom-emacs, hyprland, ... }:
+{ lib
+, inputs
+, user
+, nur
+, nixpkgs
+, home-manager
+, doom-emacs
+, hyprland
+, rgb
+, swww
+, ... 
+}:
 
 let
   system = "x86_64-linux";
@@ -28,7 +39,7 @@ in {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = {
-          inherit user doom-emacs;
+          inherit user doom-emacs rgb swww;
           host = {
             hostName = "xbocks";
           };
