@@ -10,8 +10,9 @@ in
     homeDirectory = "/home/${user}";
 
     packages = with pkgs; [
-      # They're in.
-      rgb swww
+      # # They're in.
+      # rgb.packages.x86_64-linux
+      # swww.packages.x86_64-linux
 
       waybar
       cava
@@ -27,6 +28,12 @@ in
       # swaylock
       swaylock-effects
       wl-clipboard
+    ];
+
+    packages = [
+      # ???
+      swww
+      rgb
     ];
     stateVersion = "22.05";
   };

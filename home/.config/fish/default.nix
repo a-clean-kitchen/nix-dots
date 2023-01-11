@@ -136,8 +136,6 @@
 
 
       alias bat='bat --theme="Catppuccin-mocha"'
-      alias hc=herbstclient
-      alias code='code-insiders'
       set MOZ_ENABLE_WAYLAND 1
       set XDG_CURRENT_DESKTOP sway
     '';

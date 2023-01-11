@@ -20,6 +20,16 @@ let
   };
 
   lib = nixpkgs.lib;
+
+  # swww = import swww {
+  #   inherit pkgs;
+  #   inherit system;
+  # };
+
+  # rgb = import rgb {
+  #   inherit pkgs;
+  #   inherit system;
+  # };
 in {
   xbocks = lib.nixosSystem {
     inherit system;
