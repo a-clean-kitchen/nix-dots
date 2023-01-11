@@ -9,32 +9,27 @@ in
     username = "${user}";
     homeDirectory = "/home/${user}";
 
-    packages = with pkgs; [
-      # # They're in.
-      # rgb.packages.x86_64-linux
-      # swww.packages.x86_64-linux
-
-      waybar
-      cava
-      kitty
-      fish
-      wofi
-      xdg-desktop-portal-wlr
-      tty-clock
-      grim
-      slurp
-      starship
-      dunst
-      # swaylock
-      swaylock-effects
-      wl-clipboard
-    ];
-
     packages = [
-      # ???
+      # Forbidden technique
       swww
       rgb
+
+      pkgs.waybar
+      pkgs.cava
+      pkgs.kitty
+      pkgs.fish
+      pkgs.wofi
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.tty-clock
+      pkgs.grim
+      pkgs.slurp
+      pkgs.starship
+      pkgs.dunst
+      # swaylock
+      pkgs.swaylock-effects
+      pkgs.wl-clipboard
     ];
+
     stateVersion = "22.05";
   };
 
