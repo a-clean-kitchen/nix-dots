@@ -22,7 +22,9 @@
   users.users.${user} = {                   # System User
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
+    # ofc ofc change me
+    initialPassword = "P4ssword!";
   };
   security.sudo.wheelNeedsPassword = false;
 
