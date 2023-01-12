@@ -9,22 +9,23 @@ in
     username = "${user}";
     homeDirectory = "/home/${user}";
 
-    packages = [
-      pkgs.waybar
-      pkgs.cava
-      pkgs.kitty
-      pkgs.fish
-      pkgs.wofi
-      pkgs.xdg-desktop-portal-wlr
-      pkgs.tty-clock
-      pkgs.grim
-      pkgs.slurp
-      pkgs.starship
-      pkgs.dunst
-      # pkgs.swaylock
-      pkgs.swaylock-effects
-      pkgs.wl-clipboard
-      pkgs.neofetch
+    packages = with pkgs; [
+      waybar
+      cava
+      kitty
+      fish
+      wofi
+      xdg-desktop-portal-wlr
+      tty-clock
+      grim
+      slurp
+      starship
+      dunst
+      # swaylock
+      swaylock-effects
+      wl-clipboard
+      neofetch
+      polkit-gnome
     ];
     sessionVariables = {
       XDH_RUNTIME_DIR = "/run/user/$UID";
