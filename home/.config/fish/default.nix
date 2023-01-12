@@ -3,15 +3,12 @@
 {
   programs.fish = {
     enable = true;
+    interactiveShellInit = ''
+      starship init fish | source &
+      thefuck --alias | source &
+      ~/.config/fish/tty.sh &
+    '';
     shellInit = ''
-      if status is-interactive
-          # Commands to run in interactive sessions can go here
-        starship init fish | source &
-        thefuck --alias | source &
-        ~/.config/fish/tty.sh &
-      end
-
-
       set -l teal 94e2d5
       set -l flamingo f2cdcd
       set -l mauve cba6f7
@@ -56,15 +53,6 @@
       set -g man_standout -b $gray
       set -g man_underline -u $blue
 
-
-      # Directory abbreviations
-      abbr -a -g l 'ls'
-      abbr -a -g la 'ls -a'
-      abbr -a -g ll 'ls -l'
-      abbr -a -g lal 'ls -al'
-      abbr -a -g d 'dirs'
-      abbr -a -g h 'cd $HOME'
-
       # Locale
       export LANG="en_US.UTF-8"
       export LC_ALL="en_US.UTF-8"
@@ -81,87 +69,55 @@
         export TERM='xterm-256color'
       end
 
-
-      # User abbreviations
-      abbr -a -g ytmp3 'youtube-dl --extract-audio --audio-format mp3'				# Convert/Download YT videos as mp3
-      abbr -a -g cls 'clear'# Clear
-      abbr -a -g h 'history'# Show history
-      abbr -a -g upd 'paru -Syu --noconfirm'# Update everything
-      abbr -a -g please 'sudo'# Polite way to sudo
-      abbr -a -g fucking 'sudo'# Rude way to sudo
-      abbr -a -g sayonara 'shutdown now'# Epic way to shutdown
-      abbr -a -g shinei 'kill -9'# Kill ala DIO
-      abbr -a -g priv 'fish --private'# Fish incognito mode
-      abbr -a -g sshon 'sudo systemctl start sshd.service'# Start ssh service
-      abbr -a -g sshoff 'sudo systemctl stop sshd.service'# Stop ssh service
-      abbr -a -g untar 'tar -zxvf'# Untar
-      abbr -a -g genpass 'openssl rand -base64 20'# Generate a random, 20-charactered password
-      abbr -a -g sha 'shasum -a 256'# Test checksum
-      abbr -a -g cn 'ping -c 5 8.8.8.8'# Ping google, checking network
-      abbr -a -g ipe 'curl ifconfig.co'# Get external IP address
-      abbr -a -g ips 'ip link show'# Get network interfaces information
-      abbr -a -g wloff 'rfkill block wlan'# Block wlan, killing wifi connection
-      abbr -a -g wlon 'rfkill unblock wlan'# Unblock wlan, start wifi connection
-
-      # Source plugins
-      # Useful plugins: archlinux bang-bang cd colorman sudope vcs
-      # if test -d "$HOME/.local/share/omf/pkg/colorman/"
-      # 	source ~/.local/share/omf/pkg/colorman/init.fish
-      # end
-
       # Make su launch fish
       function su
         command su --shell=/usr/bin/fish $argv
       end
 
-      # function wa
-      #     set -f APPID "6HV6YJ-QGK36VKQQJ" # Get one at https://products.wolframalpha.com/api/
-      #     echo $argv | string escape --style=url | read question_string
-      #     set -f url "https://api.wolframalpha.com/v1/result?appid="$APPID"&i="$question_string
-      #     curl -s $url
-      # end
-
-      # Get terminal emulator
-      # set TERM_EMULATOR (ps -aux | grep (ps -p $fish_pid -o ppid=) | awk 'NR==1{print $11}')
-
       # Neofetch
-      # switch "$TERM_EMULATOR"
-      # case '*kitty*'
-      #       neofetch --backend 'kitty'
-      # case '*tmux*' '*login*' '*sshd*' '*konsole*'
-      #	neofetch --backend 'ascii' --ascii_distro 'arch_small' 
-      # case '*'
-      # 	neofetch --backend 'w3m' --xoffset 34 --yoffset 34 --gap 0
-      # end
+      switch "$TERM_EMULATOR"
+      case '*kitty*'
+            neofetch --backend 'kitty'
+      case '*tmux*' '*login*' '*sshd*' '*konsole*'
+      	neofetch --backend 'ascii' --ascii_distro 'arch_small' 
+      case '*'
+      	neofetch --backend 'w3m' --xoffset 34 --yoffset 34 --gap 0
+      end
 
-
-      alias bat='bat --theme="Catppuccin-mocha"'
       set MOZ_ENABLE_WAYLAND 1
       set XDG_CURRENT_DESKTOP sway
     '';
-    # Neither plugin has releases so I need to find another way of
-    # installing them
-    # plugins = [
-    #   {
-    #     name = "decors/fish-colored-man";
-    #     src = pkgs.fetchFromGitHub {
-    #       owner = "decors";
-    #       repo = "fish-colored-man";
-    #       rev = "1ad8fff696d48c8bf173aa98f9dff39d7916de0e";
-    #       sha256 = "17cmy0s1908s2rqs0zwr05f3541nqm2pg08n2xn97g2k3yimdg5q";
-    #     };
-    #   }
+    shellAbbrs = {
+      cls = "clear";
+      hl = "history | less";
+      please = "sudo";# Polite way to sudo
+      fucking = "sudo";# Less polite way to sudo
+      sayonara = "shutdown now";# Epic way to shutdown
+      shinei = "kill -9";# Kill ala DIO
+      priv = "fish --private";# XXXASCII
+      untar = "tar -zxvf";
+      genpass = "openssl rand -base64 20"; # Generate a random, 20-charactered password
+      sha = "shasum -a 256";# Test checksum
+      cn = "ping -c 5 8.8.8.8";# Ping google, checking network
+      ipe = "curl ifconfig.co";# Get external IP address
+      ips = "ip link show";# Get network interfaces information
+      wloff = "rfkill block wlan";# Block wlan, killing wifi connection
+      wlon = "rfkill unblock wlan";# Unblock wlan, start wifi connection
 
-    #   {
-    #     name = "catpuccin/fish";
-    #     src = pkgs.fetchFromGitHub {
-    #       owner = "catpuccin";
-    #       repo = "fish";
-    #       rev = "b90966686068b5ebc9f80e5b90fdf8c02ee7a0ba";
-    #       sha256 = "17cmy0s1908s2rqs0zwr05f3541nqm2pg08n2xn97g2k3yimdg5q";
-    #     };
-    #   }
-    # ];
+      l = "ls";
+      la = "ls -a";
+      ll = "ls -l";
+      lal = "ls -al";
+      d = "dirs";
+      h = "cd $HOME";
+      ".." = "cd ..";
+      "..." = "cd ../..";
+      "...." = "cd ../../..";
+    };
+    shellAliases = {
+      # "bat cache --build" will need to be run for this to work
+      bat = "bat --theme=Catppuccin-mocha";
+    };
     functions = {
       "man" = {
         wraps = "man";
