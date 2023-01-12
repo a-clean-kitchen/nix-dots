@@ -5,7 +5,7 @@
     bat = {
       enable = true;
       config = {
-        theme = "Catppuccin-mocha";
+        theme = builtins.readFile ./themes/Catppuccin-mocha.tmTheme;
       };
     };
   };
