@@ -1,4 +1,4 @@
-{ config, lib, pkgs, user, rgb, swww, ... }:
+{ config, system, lib, pkgs, user, rgb, swww, ... }:
 let
 
 in
@@ -11,8 +11,8 @@ in
 
     packages = [
       # Forbidden technique
-      swww
-      rgb
+      (import swww)."${system}"
+      (import rgb)."${system}"
 
       pkgs.waybar
       pkgs.cava
