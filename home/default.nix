@@ -11,8 +11,8 @@ in
 
     packages = [
       # Forbidden technique
-      (import swww { inherit pkgs; })."${system}"
-      (import rgb { inherit pkgs; })."${system}"
+      (import swww {})."${system}"
+      (import rgb {})."${system}"
 
       pkgs.waybar
       pkgs.cava
