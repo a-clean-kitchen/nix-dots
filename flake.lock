@@ -82,11 +82,11 @@
     "emacs-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1673462692,
-        "narHash": "sha256-FsRQPqq1J0iPzJcaIiRl9weio3lyXM4w0Ae/RehI//E=",
+        "lastModified": 1673494149,
+        "narHash": "sha256-TitnT29bxDzckQfePsHMARtPS2TLHbLlf4FTgy9JdXw=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "a488b1a67be14ce00e26e580e10b7bcb67e4b46d",
+        "rev": "9066f92a2f6334de8977240e221278aba8037d7a",
         "type": "github"
       },
       "original": {
@@ -306,6 +306,24 @@
     },
     "naersk": {
       "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1671096816,
+        "narHash": "sha256-ezQCsNgmpUHdZANDCILm3RvtO1xH8uujk/+EqNvzIOg=",
+        "owner": "nmattia",
+        "repo": "naersk",
+        "rev": "d998160d6a076cfe8f9741e56aeec7e267e3e114",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nmattia",
+        "repo": "naersk",
+        "type": "github"
+      }
+    },
+    "naersk_2": {
+      "inputs": {
         "nixpkgs": [
           "rgb",
           "nixpkgs"
@@ -325,7 +343,7 @@
         "type": "github"
       }
     },
-    "naersk_2": {
+    "naersk_3": {
       "inputs": {
         "nixpkgs": [
           "swww",
@@ -364,6 +382,20 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1673466167,
+        "narHash": "sha256-1HzUCtWwHRGzTOHCIKGG0lVL6wvsyPSSyBuIqZWYowc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "68e03abb2fd8db50eaee69ad58b208451143e005",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1673315479,
         "narHash": "sha256-GNCFRtDHjTygXGJp/H+f2XQPMGxpYSmNiibIqYzihtM=",
         "owner": "nixos",
@@ -396,11 +428,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1673466346,
-        "narHash": "sha256-xQmR3V5l5hwHSWIOmWxqBUttmcgsUD7Da8sEpngW7/w=",
+        "lastModified": 1673496602,
+        "narHash": "sha256-J2omGvYZDaGupS/pVlkvQlMvnTLb1AN+LKn5OeYwKBg=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "1ee2886609567a210debe8b53520b12b9d7541f8",
+        "rev": "0bba7bdb0a2fe1dc4abfbd36908c669024baaf1d",
         "type": "github"
       },
       "original": {
@@ -507,7 +539,7 @@
     },
     "rgb": {
       "inputs": {
-        "naersk": "naersk",
+        "naersk": "naersk_2",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -532,7 +564,8 @@
         "emacs-overlay": "emacs-overlay",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "nixpkgs": "nixpkgs",
+        "naersk": "naersk",
+        "nixpkgs": "nixpkgs_2",
         "nur": "nur",
         "rgb": "rgb",
         "swww": "swww"
@@ -572,7 +605,7 @@
     },
     "swww": {
       "inputs": {
-        "naersk": "naersk_2",
+        "naersk": "naersk_3",
         "nixpkgs": [
           "nixpkgs"
         ]
