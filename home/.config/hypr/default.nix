@@ -15,6 +15,11 @@
     recursive = true;
   };
 
+  xdg.configFile."hypr/component/waybar" = {
+    source = ./component/waybar;
+    recursive = true;
+  };
+
   imports = [
     ./scripts.nix
     ./component
