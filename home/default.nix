@@ -25,7 +25,9 @@ in
       pkgs.swaylock-effects
       pkgs.wl-clipboard
     ];
-
+    sessionVariables = {
+      XDH_RUNTIME_DIR = "/run/user/$UID";
+    };
     stateVersion = "22.05";
   };
 
