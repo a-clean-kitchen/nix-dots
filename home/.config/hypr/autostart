@@ -15,7 +15,7 @@ $scripts/launch_waybar &
 $scripts/wall $config/wallpapers/cloud.png &
 
 # effects
-$scripts/rgb &
+$scripts/pre-built/rgb &
 
 # other
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
