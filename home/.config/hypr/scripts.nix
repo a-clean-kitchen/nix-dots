@@ -1,28 +1,71 @@
 { pkgs, ... }:
 
-let
-  makeScript = name: text: xdg.configFile."hypr/scripts/${name}" // {
-    text = text;
+{
+  # xdg.configFile."hypr/autostart" = {
+  #   executable = true;
+  #   text = builtins.readFile ./autostart;
+  # };
+
+  xdg.configFile."hypr/scripts/tools/start_dyn" = {
     executable = true;
-  };
-in {
-  xdg.configFile."hypr/scripts" = {
-    source = ./scripts;
-    recursive = true;
-    executable = true;
+    text = builtins.readFile ./scripts/tools/start_dyn;
   };
 
-  makeScript start_dyn ''
-    #! /usr/bin/env nix-shell
-    #! nix-shell -i bash
+  xdg.configFile."hypr/scripts/tools/notif" = {
+    executable = true;
+    text = builtins.readFile ./scripts/tools/notif;
+  };
 
-    while true
-    do
-        # echo ""
-        out=$(cat ~/.config/hypr/store/dynamic_out.txt)
-        echo "$out"  | jq --unbuffered --compact-output
-        # cat ~/.config/hypr/scripts/tools/dynamic_out.txt
-        sleep 0.5
-    done
-  '';
+  xdg.configFile."hypr/scripts/tools/expand" = {
+    executable = true;
+    text = builtins.readFile ./scripts/tools/expand;
+  };
+
+  xdg.configFile."hypr/scripts/tools/dynamic" = {
+    executable = true;
+    text = builtins.readFile ./scripts/tools/dynamic;
+  };
+
+  xdg.configFile."hypr/scripts/expand_toolbar" = {
+    executable = true;
+    text = builtins.readFile ./scripts/expand_toolbar;
+  };
+
+  xdg.configFile."hypr/scripts/launch_waybar" = {
+    executable = true;
+    text = builtins.readFile ./scripts/launch_waybar;
+  };
+
+  xdg.configFile."hypr/scripts/rgb_borders" = {
+    executable = true;
+    text = builtins.readFile ./scripts/rgb_borders;
+  };
+
+  xdg.configFile."hypr/scripts/screenshot" = {
+    executable = true;
+    text = builtins.readFile ./scripts/screenshot;
+  };
+
+  xdg.configFile."hypr/scripts/workspaces" = {
+    executable = true;
+    text = builtins.readFile ./scripts/workspaces;
+  };
+
+  xdg.configFile."hypr/scripts/wall" = {
+    executable = true;
+    text = builtins.readFile ./scripts/wall;
+  };
+
+  xdg.configFile."hypr/scripts/toolbar_state" = {
+    executable = true;
+    text = builtins.readFile ./scripts/toolbar_state;
+  };
+
+  # NEED TO GET SWAYLOCKD WORKING ON NIX BEFORE I DO THIS
+  # or just flat out replace it idk...
+  #
+  # xdg.configFile."hypr/scripts/lock" = {
+  #   executable = true;
+  #   text = builtins.readFile ./scripts/lock;
+  # };
 }
