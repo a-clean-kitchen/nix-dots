@@ -25,7 +25,7 @@ in
       swaylock-effects
       wl-clipboard
       neofetch
-      polkit-gnome
+      polkit_gnome
     ];
     sessionVariables = {
       XDH_RUNTIME_DIR = "/run/user/$UID";
