@@ -8,22 +8,22 @@ import pickle
 import time
 import threading
 
-OUT = f"{Path.home()}/.config/hypr/store/dynamic_out.txt"
-# PREV_PATH = f"{Path.home()}/.config/hypr/store/prev.txt"
+OUT = f"{Path.home()}/.local/qm/dynamic_out.txt"
+# PREV_PATH = f"{Path.home()}/.local/qm/prev.txt"
 prev = None
 
 def print(ar):
     with open(OUT,"w") as f:
         f.write(json.dumps(ar))
 
-# with open(f"{Path.home()}/.config/hypr/im_here","w") as f:
+# with open(f"{Path.home()}/.local/qm/im_here","w") as f:
 #     f.write("")
 
 global PAUSE_MEDIA
 PAUSE_MEDIA = False
 
 def notif_watcher():
-    with open(f"{Path.home()}/.config/hypr/store/latest_notif","rb") as f:
+    with open(f"{Path.home()}/.local/qm/latest_notif","rb") as f:
         new = pickle.load(f)
         global prev
         if new != prev:
