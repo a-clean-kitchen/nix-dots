@@ -24,6 +24,7 @@ in
       # pkgs.swaylock
       pkgs.swaylock-effects
       pkgs.wl-clipboard
+      pkgs.neofetch
     ];
     sessionVariables = {
       XDH_RUNTIME_DIR = "/run/user/$UID";
