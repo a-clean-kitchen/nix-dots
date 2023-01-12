@@ -11,7 +11,7 @@ in
 
     packages = [
       # Forbidden technique
-      (import swww {})."${system}"
+      (import swww { lib = {}; })."${system}"
       (import rgb {})."${system}"
 
       pkgs.waybar
