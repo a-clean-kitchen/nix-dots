@@ -43,7 +43,7 @@
     naersk.url = "github:nmattia/naersk";                                 # Their build tool
   };
 
-  outputs = inputs @ { self, nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland, swww, rgb }: 
+  outputs = inputs @ { self, naersk, nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland, swww, rgb }: 
     let
       user = "qm";
     in {
