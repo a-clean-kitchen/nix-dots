@@ -61,6 +61,15 @@
     source = ./scripts/toolbar_state;
   };
 
+  xdg.configFile."hypr/scripts/pre-built/rgb" = {
+    executable = true;
+    source = ./scripts/pre-built/rgb;
+  };
+
+  xdg.configFile."hypr/scripts/pre-built/swww" = {
+    executable = true;
+    source = ./scripts/pre-built/swww;
+  };
   # NEED TO GET SWAYLOCKD WORKING ON NIX BEFORE I DO THIS
   # or just flat out replace it idk...
   #
