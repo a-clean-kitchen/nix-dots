@@ -8,6 +8,7 @@
 , hyprland
 , rgb
 , swww
+, naersk
 , ... 
 }:
 
@@ -49,7 +50,7 @@ in {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = {
-          inherit user doom-emacs rgb swww system;
+          inherit user doom-emacs rgb swww system naersk;
           host = {
             hostName = "xbocks";
           };
