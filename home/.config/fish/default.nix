@@ -45,7 +45,6 @@
       set -g __fish_git_prompt_char_upstream_behind ''
       set -g __fish_git_prompt_char_upstream_diverged 'ﱟ'
       set -g __fish_git_prompt_char_upstream_equal ''
-      set -g __fish_git_prompt_char_upstream_prefix ''''
 
 
       set -g man_blink -o $teal
