@@ -114,10 +114,6 @@
       "..." = "cd ../..";
       "...." = "cd ../../..";
     };
-    shellAliases = {
-      # "bat cache --build" will need to be run for this to work
-      bat = "bat --theme=Catppuccin-mocha";
-    };
     functions = {
       "man" = {
         wraps = "man";
@@ -170,9 +166,7 @@
     recursive = true;
     source = ./conf.d;
   };
-  # xdg.configFile."fish/config.fish".source = ./config.fish;
   xdg.configFile."fish/fish_variables".source = ./fish_variables;
-  # xdg.configFile."fish/fish_plugins".source = ./fish_plugins;
   xdg.configFile."fish/tty.sh" = {
     source = ./tty.sh;
     executable = true;

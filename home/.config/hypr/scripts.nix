@@ -3,62 +3,62 @@
 {
   # xdg.configFile."hypr/autostart" = {
   #   executable = true;
-  #   text = builtins.readFile ./autostart;
+  #   source = ./autostart;
   # };
 
   xdg.configFile."hypr/scripts/tools/start_dyn" = {
     executable = true;
-    text = builtins.readFile ./scripts/tools/start_dyn;
+    source = ./scripts/tools/start_dyn;
   };
 
   xdg.configFile."hypr/scripts/tools/notif" = {
     executable = true;
-    text = builtins.readFile ./scripts/tools/notif;
+    source = ./scripts/tools/notif;
   };
 
   xdg.configFile."hypr/scripts/tools/expand" = {
     executable = true;
-    text = builtins.readFile ./scripts/tools/expand;
+    source = ./scripts/tools/expand;
   };
 
   xdg.configFile."hypr/scripts/tools/dynamic" = {
     executable = true;
-    text = builtins.readFile ./scripts/tools/dynamic;
+    source = ./scripts/tools/dynamic;
   };
 
   xdg.configFile."hypr/scripts/expand_toolbar" = {
     executable = true;
-    text = builtins.readFile ./scripts/expand_toolbar;
+    source = ./scripts/expand_toolbar;
   };
 
   xdg.configFile."hypr/scripts/launch_waybar" = {
     executable = true;
-    text = builtins.readFile ./scripts/launch_waybar;
+    source = ./scripts/launch_waybar;
   };
 
   xdg.configFile."hypr/scripts/rgb_borders" = {
     executable = true;
-    text = builtins.readFile ./scripts/rgb_borders;
+    source = ./scripts/rgb_borders;
   };
 
   xdg.configFile."hypr/scripts/screenshot" = {
     executable = true;
-    text = builtins.readFile ./scripts/screenshot;
+    source = ./scripts/screenshot;
   };
 
   xdg.configFile."hypr/scripts/workspaces" = {
     executable = true;
-    text = builtins.readFile ./scripts/workspaces;
+    source = ./scripts/workspaces;
   };
 
   xdg.configFile."hypr/scripts/wall" = {
     executable = true;
-    text = builtins.readFile ./scripts/wall;
+    source = ./scripts/wall;
   };
 
   xdg.configFile."hypr/scripts/toolbar_state" = {
     executable = true;
-    text = builtins.readFile ./scripts/toolbar_state;
+    source = ./scripts/toolbar_state;
   };
 
   # NEED TO GET SWAYLOCKD WORKING ON NIX BEFORE I DO THIS
@@ -66,6 +66,6 @@
   #
   # xdg.configFile."hypr/scripts/lock" = {
   #   executable = true;
-  #   text = builtins.readFile ./scripts/lock;
+  #   source = ./scripts/lock;
   # };
 }
