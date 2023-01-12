@@ -73,16 +73,6 @@
         command su --shell=/usr/bin/fish $argv
       end
 
-      # Neofetch
-      switch "$TERM_EMULATOR"
-      case '*kitty*'
-            neofetch --backend 'kitty'
-      case '*tmux*' '*login*' '*sshd*' '*konsole*'
-      	neofetch --backend 'ascii' --ascii_distro 'arch_small' 
-      case '*'
-      	neofetch --backend 'w3m' --xoffset 34 --yoffset 34 --gap 0
-      end
-
       set MOZ_ENABLE_WAYLAND 1
       set XDG_CURRENT_DESKTOP sway
     '';
