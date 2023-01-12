@@ -5,7 +5,8 @@ config=$HOME/.config/hypr
 scripts=$config/scripts
 
 # notification daemon
-dunst &
+# kill existing dunst
+killall dunst &>/dev/null && dunst &
 
 # waybar
 $scripts/launch_waybar &
