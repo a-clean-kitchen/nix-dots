@@ -26,6 +26,8 @@ in
       wl-clipboard
       neofetch
       polkit_gnome
+      papirus-icon-theme
+      gnome.adwaita-icon-theme
     ];
     sessionVariables = {
       XDH_RUNTIME_DIR = "/run/user/$UID";
