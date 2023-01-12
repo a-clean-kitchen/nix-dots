@@ -1,4 +1,4 @@
-{ config, system, lib, pkgs, user, rgb, swww, naersk, ... }:
+{ config, system, lib, pkgs, user, ... }:
 let
 
 in
@@ -10,10 +10,6 @@ in
     homeDirectory = "/home/${user}";
 
     packages = [
-      # Forbidden technique
-      (import swww { lib = {}; inherit naersk; })."${system}"
-      (import rgb { lib = {}; inherit naersk; })."${system}"
-
       pkgs.waybar
       pkgs.cava
       pkgs.kitty
@@ -25,7 +21,7 @@ in
       pkgs.slurp
       pkgs.starship
       pkgs.dunst
-      # swaylock
+      # pkgs.swaylock
       pkgs.swaylock-effects
       pkgs.wl-clipboard
     ];

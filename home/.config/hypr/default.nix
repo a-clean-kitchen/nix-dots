@@ -7,7 +7,8 @@
 
   xdg.configFile."hypr/autostart" = {
     text = ''
-      #!/usr/bin/bash
+      #! /usr/bin/env nix-shell
+      #! nix-shell -i bash
 
       # variables
       config=~/.config/hypr
@@ -25,7 +26,7 @@
 
       # effects
       # Keeping this down until I turn rgb-rs into a flake
-      # $scripts/rgb &
+      $scripts/pre-built/rgb &
 
       # other
       /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

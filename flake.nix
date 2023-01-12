@@ -30,20 +30,20 @@
     };
 
     # bastard, stolen, retroflaked software
-    swww = {
-      url = "github:a-clean-kitchen/swww";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # swww = {
+    #   url = "github:a-clean-kitchen/swww";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
-    rgb = {
-      url = "github:a-clean-kitchen/rgb-rs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # rgb = {
+    #   url = "github:a-clean-kitchen/rgb-rs";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
-    naersk.url = "github:nmattia/naersk";                                 # Their build tool
+    # naersk.url = "github:nmattia/naersk";                                 # Their build tool
   };
 
-  outputs = inputs @ { self, naersk, nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland, swww, rgb }: 
+  outputs = inputs @ { self,  nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland }: 
     let
       user = "qm";
     in {
@@ -51,7 +51,7 @@
         import ./hosts {
           inherit (nixpkgs) lib;
           inherit inputs;
-          inherit (inputs) naersk swww rgb nixpkgs nur home-manager doom-emacs hyprland;
+          inherit (inputs) nixpkgs nur home-manager doom-emacs hyprland;
           inherit user;
         }
       );
