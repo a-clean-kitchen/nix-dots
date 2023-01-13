@@ -56,6 +56,11 @@
     source = ./scripts/wall;
   };
 
+  xdg.configFile."hypr/scripts/lock" = {
+    executable = true;
+    source = ./scripts/lock;
+  };
+
   xdg.configFile."hypr/scripts/toolbar_state" = {
     executable = true;
     source = ./scripts/toolbar_state;

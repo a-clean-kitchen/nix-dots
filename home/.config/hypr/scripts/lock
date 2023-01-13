@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-swaylockd \
+swaylock \
 --screenshots \
 --indicator \
 --clock \
@@ -20,4 +20,6 @@ swaylockd \
 --line-color 313244 \
 --inside-color 0011111b \
 --separator-color 00000000 \
---fade-in 0.1 &
+--fade-in 0.4 \
+--daemonize \
+--grace 5 &
