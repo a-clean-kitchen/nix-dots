@@ -35,10 +35,6 @@
 
   networking = {
     dhcpcd.enable = true;
-    networkmanager = {
-      enable = true;
-      dhcp = "dhcpcd";
-    };
   };
 
   console = {
