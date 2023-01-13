@@ -14,7 +14,7 @@ in
       cava
       kitty
       fish
-      wofi
+      wofi dmenu
       xdg-desktop-portal-wlr
       tty-clock
       grim
