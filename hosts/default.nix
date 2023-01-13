@@ -58,6 +58,36 @@ in {
       }
     ];
   };
+  lapeaux = lib.nixosSystem {
+    inherit system;
+    specialArgs = {
+     inherit inputs user;
+     host = {
+       hostName = "lapeaux";
+     };
+    };
+    modules = [
+      nur.nixosModules.nur
+      hyprland.nixosModules.default
+      ./lapeaux/configuration.nix
+      ./configuration.nix
+
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = {
+          inherit user doom-emacs system ;
+          host = {
+            hostName = "lapaeux";
+          };
+        };
+        home-manager.users.${user} = {
+          imports = [(import ../home)] ;
+        };
+      }
+    ];
+  };
+
 #   lapeaux = lib.nixosSystem {
 #     inherit system;
 #     specialArgs = {

@@ -33,7 +33,6 @@ in
       
       firefox
       zathura
-      networkmanager_dmenu
     ];
     sessionVariables = {
       XDH_RUNTIME_DIR = "/run/user/$UID";
