@@ -28,10 +28,6 @@
   };
   networking.hostName = "lapeaux";
 
-  # Give wpa some breathing room
-  networking.networkmanager.unmanaged = [
-    "*" "except:type:wwan" "except:type:gsm"
-  ];
   networking.wireless = {
     iwd.enable = true;
     userControlled = {

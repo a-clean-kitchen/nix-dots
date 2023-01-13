@@ -72,8 +72,7 @@
       vim tmux nano
       git jq thefuck tldr
       killall gh
-      pciutils
-      usbutils
+      pciutils usbutils
       dig nmap curl traceroute wget                           # Network tools
     ];
   };
