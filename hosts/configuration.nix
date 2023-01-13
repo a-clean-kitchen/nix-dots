@@ -33,7 +33,7 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  networking = {};
+  networking.networkmanager.enable = true;
 
   console = {
     font = "Lat2-Terminus16";
@@ -59,11 +59,6 @@
   programs.hyprland.enable = true;
 
   environment = {
-    loginShellInit = ''
-      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland
-      fi
-    '';                                   # Will automatically open Hyprland when logged into tty1
 
     variables = {
       TERMINAL = "kitty";
