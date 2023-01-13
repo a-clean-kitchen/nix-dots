@@ -34,6 +34,7 @@
   ];
   networking.wireless = {
     enable = true;
+    iwd.enable = true;
     userControlled = {
       enable = true;
       group = "wheel";

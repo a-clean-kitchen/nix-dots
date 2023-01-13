@@ -57,9 +57,9 @@
   ];
 
   programs.hyprland.enable = true;
+  xdg.portal.wlr.enable = true;
 
   environment = {
-
     variables = {
       TERMINAL = "kitty";
       EDITOR = "nvim";

@@ -33,6 +33,7 @@ in
       
       firefox
       zathura
+      iwgtk
     ];
     sessionVariables = {
       XDH_RUNTIME_DIR = "/run/user/$UID";
