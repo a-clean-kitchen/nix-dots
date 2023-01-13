@@ -33,7 +33,6 @@
     "*" "except:type:wwan" "except:type:gsm"
   ];
   networking.wireless = {
-    enable = true;
     iwd.enable = true;
     userControlled = {
       enable = true;
