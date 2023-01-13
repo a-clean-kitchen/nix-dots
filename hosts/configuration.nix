@@ -70,7 +70,7 @@
     };
     systemPackages = with pkgs; [           # Default packages installed system-wide
       vim tmux nano
-      git jq thefuck
+      git jq thefuck tldr
       killall gh
       pciutils
       usbutils
