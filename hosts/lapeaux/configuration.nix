@@ -34,7 +34,6 @@
       enable = true;
       group = "wheel";
     };
-    interfaces = [ "wlp1s0" ];
     allowAuxiliaryImperativeNetworks = true;
   };
   # This value determines the NixOS release from which the default
