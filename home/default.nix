@@ -28,8 +28,10 @@ in
       polkit_gnome
       papirus-icon-theme
       gnome.adwaita-icon-theme
-      termusic
+      # Dependenccies for youtube-tui
       mpv yt-dlp ffmpeg
+      firefox
+
     ];
     sessionVariables = {
       XDH_RUNTIME_DIR = "/run/user/$UID";

@@ -74,7 +74,7 @@
     systemPackages = with pkgs; [           # Default packages installed system-wide
       vim tmux nano
       git jq thefuck
-      killall
+      killall gh
       pciutils
       usbutils
       dig nmap curl traceroute wget                           # Network tools
