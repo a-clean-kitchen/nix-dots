@@ -8,11 +8,6 @@
       thefuck --alias | source &
       ~/.config/fish/tty.sh &
     '';
-    loginShellInit = ''
-      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland
-      fi
-    '';
     shellInit = ''
       set -l teal 94e2d5
       set -l flamingo f2cdcd

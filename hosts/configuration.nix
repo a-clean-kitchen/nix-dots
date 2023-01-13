@@ -33,7 +33,13 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  networking.networkmanager.enable = true;
+  networking = {
+    dhcpcd = true;
+    networkmanager = {
+      enable = true;
+      dhcp = "dhcpcd";
+    };
+  };
 
   console = {
     font = "Lat2-Terminus16";
