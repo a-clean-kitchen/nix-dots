@@ -76,6 +76,7 @@
       killall gh
       pciutils usbutils
       dig nmap curl traceroute wget                           # Network tools
+      xdg-utils
     ];
   };
 
