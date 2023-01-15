@@ -12,7 +12,7 @@
       # Rosé Pine
       include Catppuccin.conf
       # END_KITTY_THEME 
-    '';  
+    '';
   };
   xdg.configFile."kitty/Catppuccin.conf".source = ./Catppuccin.conf;
 }

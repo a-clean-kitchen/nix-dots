@@ -4,7 +4,6 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      # starship init fish | source &
       thefuck --alias | source &
       ~/.config/fish/tty.sh &
     '';
