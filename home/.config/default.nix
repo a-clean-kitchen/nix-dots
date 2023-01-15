@@ -7,4 +7,5 @@
   ./hypr
   ./kitty
   ./wofi
+  ./zathura
 ]
