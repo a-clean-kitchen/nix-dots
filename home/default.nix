@@ -19,7 +19,7 @@ in
       tty-clock
       grim
       slurp
-      starship
+      
       dunst
       # swaylock
       swaylock-effects
@@ -32,7 +32,6 @@ in
       mpv yt-dlp ffmpeg
       
       firefox
-      zathura
       iwgtk
     ];
     sessionVariables = {

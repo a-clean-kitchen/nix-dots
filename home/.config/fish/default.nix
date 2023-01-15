@@ -4,7 +4,7 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      starship init fish | source &
+      # starship init fish | source &
       thefuck --alias | source &
       ~/.config/fish/tty.sh &
     '';
@@ -159,5 +159,10 @@
   xdg.configFile."fish/tty.sh" = {
     source = ./tty.sh;
     executable = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
   };
 }
