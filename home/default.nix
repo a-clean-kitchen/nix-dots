@@ -1,4 +1,4 @@
-{ config, system, lib, pkgs, user, ... }:
+{ config, doom-emacs, system, lib, pkgs, user, ... }:
 # let
 #   waybar = pkgs.waybar.overrideAttrs (o: {
 #       unpackPhase = o.patchPhase ++ ''
@@ -34,7 +34,9 @@
       gnome.adwaita-icon-theme
       # Dependenccies for youtube-tui
       mpv yt-dlp ffmpeg
-      
+      # doom-emacs
+      ripgrep coreutils fd
+
       firefox
       iwgtk
     ];
@@ -47,4 +49,15 @@
   programs = {
     home-manager.enable = true;
   };
+
+ home.file.".doom.d" = {                       # Get Doom Emacs
+   source = ./doom.d;                          # Sets up symlink name ".doom.d" for file "doom.d"
+   recursive = true;                           # Allow symlinking a directory
+   onChange = builtins.readFile ./doom.sh;     # If an edit is detected, it will run this script. Pretty much the same as what is now in default.nix but actually stating the terminal and adding the disown flag to it won't time out
+ };
+
+ programs = {
+   emacs.enable = true;                        # Get Emacs
+ };
+
 }
