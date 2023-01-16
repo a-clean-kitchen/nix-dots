@@ -1,11 +1,11 @@
 { config, system, lib, pkgs, user, ... }:
-let
-  waybar = pkgs.waybar.overrideAttrs (o: {
-      unpackPhase = o.patchPhase ++ ''
-        sed -i 's/zext_workspace_handle_v1_activate(workspace_handle_);/const std::string command = "hyprctl dispatch workspace " + name_;\n\tsystem(command.c_str());/g' src/modules/wlr/workspace_manager.cpp
-      '';
-  });
-in
+# let
+#   waybar = pkgs.waybar.overrideAttrs (o: {
+#       unpackPhase = o.patchPhase ++ ''
+#         sed -i 's/zext_workspace_handle_v1_activate(workspace_handle_);/const std::string command = "hyprctl dispatch workspace " + name_;\n\tsystem(command.c_str());/g' src/modules/wlr/workspace_manager.cpp
+#       '';
+#   });
+# in
 {
   imports = (import ./.config);
 
