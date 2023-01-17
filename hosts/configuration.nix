@@ -103,11 +103,9 @@
     enable = true;
     vt = 2;
     settings = rec {
-      initial_session = {
-        command = "''${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
-        user = "qm";
+      default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
       };
-      default_session = initial_session;
     };
   };
 ######################
