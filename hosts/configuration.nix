@@ -134,7 +134,8 @@
       jack.enable = true;
     };
     openssh = {                             # SSH: secure shell (remote connection to shell of server)
-      enable = true;                        # local: $ ssh <user>@<ip>
+      enable = true;
+      forwardX11 = true;                        # local: $ ssh <user>@<ip>
     };
   };
   security.pam.services.swaylock = {
