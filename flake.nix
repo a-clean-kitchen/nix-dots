@@ -28,19 +28,6 @@
     nur = {
       url = "github:nix-community/NUR";                                   # NUR Packages
     };
-
-    # bastard, stolen, retroflaked software
-    # swww = {
-    #   url = "github:a-clean-kitchen/swww";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # rgb = {
-    #   url = "github:a-clean-kitchen/rgb-rs";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # naersk.url = "github:nmattia/naersk";                                 # Their build tool
   };
 
   outputs = inputs @ { self,  nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland }: 
