@@ -21,7 +21,7 @@
     "custom/ss":{
         "format":"{}",
         "exec":"~/.config/hypr/scripts/tools/expand ss-icon",
-        "on-click": "~/.config/hypr/scripts/screenshot"
+        "on-click": "grim -g \"$(slurp)\" $(xdg-user-dir PICTURES)/$(date +'%s_scrnshot.png')"
     },
     "custom/cycle_wall":{
         "format":"{}",
