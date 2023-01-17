@@ -98,7 +98,7 @@
     settings = rec {
       initial_session = {
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --time --asterisks --cmd Hyprland";
-        user = "${user}";
+        user = "qm";
       };
       default_session = initial_session;
     };
