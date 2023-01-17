@@ -33,7 +33,7 @@ in {
       # doom-emacs
       ripgrep coreutils fd
 
-      firefox
+      firefox nyxt
       iwgtk
     ];
     sessionVariables = {
