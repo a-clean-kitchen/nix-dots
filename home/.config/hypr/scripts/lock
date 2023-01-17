@@ -13,7 +13,7 @@ swaylock \
 --text-color  f5c2e7 \
 --indicator-radius 80 \
 --indicator-thickness 5 \
---effect-blur 10x7 \
+--effect-pixelate 10 \
 --effect-vignette 0.2:0.2 \
 --ring-color 11111b \
 --key-hl-color f5c2e7 \
