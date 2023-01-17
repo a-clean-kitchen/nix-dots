@@ -1,5 +1,5 @@
 * {
-    font-family: CartographCF Nerd Font,FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: FiraCode Nerd Font Mono, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
 
@@ -67,7 +67,7 @@ window#waybar {
 #idle_inhibitor,
 #custom-expand,
 #custom-cycle_wall,
-#custom-ss,
+/* #custom-ss, */
 #custom-dynamic_pill,
 #mpd {
     padding: 0 10px;
@@ -124,7 +124,7 @@ window#waybar {
     color: #b4befe;
 }
 
-#custom-ss{
+/* #custom-ss{
     background: #fff;
     color: rgba(203,166,247,1);
     font-weight:  bolder;
@@ -132,7 +132,7 @@ window#waybar {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 15px;
-}
+} */
 
 #custom-cycle_wall{
     background: rgb(245,194,231);
