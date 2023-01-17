@@ -104,7 +104,7 @@
     vt = 2;
     settings = rec {
       initial_session = {
-        command = "${pkgs.ly}/bin/ly";
+        command = "''${pkgs.greetd.tuigreet}/bin/tuigreet -cmd Hyprland";
         user = "qm";
       };
       default_session = initial_session;
