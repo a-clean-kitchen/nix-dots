@@ -20,6 +20,4 @@ swaylock \
 --line-color 313244 \
 --inside-color 0011111b \
 --separator-color 00000000 \
---fade-in 0.4 \
---daemonize \
---grace 5 &
+--fade-in 0.4 &

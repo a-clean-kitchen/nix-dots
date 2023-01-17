@@ -79,6 +79,7 @@
       pciutils usbutils
       dig nmap curl traceroute wget                           # Network tools
       xdg-utils ly
+      ranger tree
     ];
   };
 
@@ -108,7 +109,11 @@
       enable = true;                        # local: $ ssh <user>@<ip>
     };
   };
-
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
   nix = {                                   # Nix Package Manager settings
     settings ={
       auto-optimise-store = true;           # Optimise syslinks

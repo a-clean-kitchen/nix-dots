@@ -44,9 +44,7 @@
         }
     },
     "wlr/workspaces": {
-        "format": "{icon}",
-        "format-active": " {icon} ",
-        "on-click": "activate"
+        "format": "{icon}"
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
