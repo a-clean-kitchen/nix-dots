@@ -88,6 +88,13 @@
     "console=tty1"
   ];
 
+  environment.etc."ly/config.ini".text = ''
+    animate = true
+    blank_box = false
+    hide_borders = true
+    hide_f1_commands = true
+  '';
+
   environment.etc."greetd/environments".text = ''
     Hyprland
   '';
@@ -97,7 +104,7 @@
     vt = 2;
     settings = rec {
       initial_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --time --asterisks --cmd Hyprland";
+        command = "${pkgs.ly}/bin/ly";
         user = "qm";
       };
       default_session = initial_session;
