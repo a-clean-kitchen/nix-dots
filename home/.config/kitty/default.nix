@@ -15,8 +15,4 @@
     '';
   };
   xdg.configFile."kitty/Catppuccin.conf".source = ./Catppuccin.conf;
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-  };
 }
