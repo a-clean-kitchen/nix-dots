@@ -91,15 +91,21 @@
   ];
 
   # TODO: unlock gnome-keyring
+  environment.etc."greetd/environments".text = ''
+    Hyprland
+  '';
 
   services.greetd = {
     enable = true;
     vt = 2;
     settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --time --asterisks --cmd ${pkgs.sway}/bin/sway";
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --time --asterisks --cmd Hyprland";
+        user = user;
       };
-    };
+      default_session = initial_session;
+    };    };
   };
 ######################
   services = {
