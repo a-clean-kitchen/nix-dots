@@ -84,13 +84,17 @@
   };
 
 #####################
-  # TODO: unlock gnome-keyring
+  boot.kernelParams = [
+    "console=tty1"
+  ];
+
   environment.etc."greetd/environments".text = ''
     Hyprland
   '';
 
   services.greetd = {
     enable = true;
+    vt = 2;
     settings = rec {
       initial_session = {
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --time --asterisks --cmd Hyprland";
