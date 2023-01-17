@@ -84,12 +84,6 @@
   };
 
 #####################
-  # puts systemd init logs on tty1
-  # so that tuigreet and systemd logs don't clobber each other
-  boot.kernelParams = [
-    "console=tty1"
-  ];
-
   # TODO: unlock gnome-keyring
   environment.etc."greetd/environments".text = ''
     Hyprland
@@ -97,15 +91,13 @@
 
   services.greetd = {
     enable = true;
-    vt = 2;
-    settings = {
     settings = rec {
       initial_session = {
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --time --asterisks --cmd Hyprland";
         user = user;
       };
       default_session = initial_session;
-    };    };
+    };
   };
 ######################
   services = {
