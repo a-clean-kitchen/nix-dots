@@ -88,13 +88,6 @@
     "console=tty1"
   ];
 
-  environment.etc."ly/config.ini".text = ''
-    animate = true
-    blank_box = false
-    hide_borders = true
-    hide_f1_commands = true
-  '';
-
   environment.etc."greetd/environments".text = ''
     Hyprland
   '';
