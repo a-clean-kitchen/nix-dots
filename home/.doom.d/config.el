@@ -9,6 +9,7 @@
 (setq user-full-name "Quade"
       user-mail-address "")
 
+(setq initial-buffer-choice "~/.doom.d/start.org")
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
