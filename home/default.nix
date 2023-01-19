@@ -33,13 +33,21 @@ in {
       # doom-emacs
       ripgrep coreutils fd
 
-      firefox nyxt
+      firefox
       iwgtk
     ];
     sessionVariables = {
       XDH_RUNTIME_DIR = "/run/user/$UID";
     };
     stateVersion = "22.05";
+  };
+
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    extraConfig = {
+      XDG_WKSP_DIR = "${config.home.homeDirectory}/wksp";
+    };
   };
 
   programs = {
