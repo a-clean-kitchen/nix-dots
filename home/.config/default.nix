@@ -6,7 +6,6 @@
   ./fish
   ./hypr
   ./kitty
-  ./vscode
   ./wofi
   ./zathura
 ]

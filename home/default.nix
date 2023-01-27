@@ -32,7 +32,7 @@ in {
       mpv yt-dlp ffmpeg
       # doom-emacs
       ripgrep coreutils fd
-
+      direnv
       firefox
       iwgtk
     ];
