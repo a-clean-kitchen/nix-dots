@@ -1,12 +1,6 @@
 { lib
 , inputs
 , user
-, nur
-, nixpkgs
-, home-manager
-, doom-emacs
-, hyprland
-, ... 
 }:
 
 let
@@ -17,7 +11,7 @@ let
     config.allowUnfree = true;
   };
 
-  lib = nixpkgs.lib;
+  inherit (inputs) nixpkgs nur home-manager doom-emacs hyprland;
 
   # swww = import swww {
   #   inherit pkgs;

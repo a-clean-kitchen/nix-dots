@@ -33,13 +33,17 @@
   outputs = inputs @ { self,  nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland }: 
     let
       user = "qm";
+      lib = nixpkgs.lib // {};
     in {
       nixosConfigurations = (
         import ./hosts {
-          inherit (nixpkgs) lib;
-          inherit inputs;
-          inherit (inputs) nixpkgs nur home-manager doom-emacs hyprland;
-          inherit user;
+          inherit lib inputs user;
+        }
+      );
+
+      homeConfigurations = (
+        import ./home/homeConfiguration.nix {
+          inherit lib inputs user;
         }
       );
   };

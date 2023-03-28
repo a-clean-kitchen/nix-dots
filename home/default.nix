@@ -37,7 +37,7 @@ in {
       iwgtk
     ];
     sessionVariables = {
-      XDH_RUNTIME_DIR = "/run/user/$UID";
+      XDG_RUNTIME_DIR = "/run/user/$UID";
     };
     stateVersion = "22.05";
   };
