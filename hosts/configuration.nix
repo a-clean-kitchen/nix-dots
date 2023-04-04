@@ -70,7 +70,7 @@
       XDG_CURRENT_DESKTOP="Hyprland";
       XDG_SESSION_TYPE="wayland";
       XDG_SESSION_DESKTOP="Hyprland";
-      # DISPLAY=":1";
+      DISPLAY=":1";
     };
     systemPackages = with pkgs; [           # Default packages installed system-wide
       vim tmux nano
