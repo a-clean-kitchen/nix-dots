@@ -30,20 +30,30 @@
     };
   };
 
-  outputs = inputs @ { self,  nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland }: 
+  outputs = inputs @ { self, nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland }: 
     let
       user = "qm";
-      lib = nixpkgs.lib // {};
+
+      #Extend lib with personal functions
+      lib = nixpkgs.lib.extend
+        (self: super: { ql = import ./lib { inherit pkgs inputs; lib = self; }; });
+
+      system = "x86_64-linux";
+
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in {
       nixosConfigurations = (
         import ./hosts {
-          inherit lib inputs user;
+          inherit lib inputs user system;
         }
       );
 
       homeConfigurations = (
-        import ./home/homeConfiguration.nix {
-          inherit lib inputs user;
+        import ./home {
+          inherit lib inputs user pkgs system;
         }
       );
   };

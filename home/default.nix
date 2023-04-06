@@ -1,4 +1,4 @@
-{ config, doom-emacs, system, lib, pkgs, user, ... }:
+{ inputs, system, lib, pkgs, user, ... }:
 let
   waybar = pkgs.waybar.overrideAttrs (o: {
     mesonFlags = o.mesonFlags ++ [ "-Dexperimental=true" ];
@@ -11,30 +11,11 @@ in {
     homeDirectory = "/home/${user}";
 
     packages = with pkgs; [
-      waybar
-      cava
-      kitty
-      fish
-      wofi dmenu
-      tty-clock
-      grim
-      slurp
-      wlroots wlr-randr
-      dunst
-      # swaylock
-      swaylock-effects
-      wl-clipboard
+      dmenu
       neofetch
-      polkit_gnome
-      papirus-icon-theme
-      gnome.adwaita-icon-theme
-      # Dependenccies for youtube-tui
-      mpv yt-dlp ffmpeg
-      # doom-emacs
       ripgrep coreutils fd
       direnv
       firefox
-      iwgtk
     ];
     sessionVariables = {
       XDG_RUNTIME_DIR = "/run/user/$UID";
@@ -46,7 +27,7 @@ in {
     enable = true;
     createDirectories = true;
     extraConfig = {
-      XDG_WKSP_DIR = "${config.home.homeDirectory}/wksp";
+      XDG_WKSP_DIR = "/home/${user}/wksp";
     };
   };
 

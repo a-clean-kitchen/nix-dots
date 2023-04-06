@@ -1,14 +1,13 @@
 {
-    "layer": "bottom", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 50, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 5, // Gaps between modules (4px)
-    // Choose the order of the modules
-    // "margin-left":25,
-    // "margin-right":25,
+    "layer": "bottom",
+    "position": "top",
+    "height": 50,
+    "width": 1280,
+    "spacing": 5,
+    "margin-left":25,
+    "margin-right":25,
     "margin-bottom":-11,
-    //"margin-top":5,
+    "margin-top":5,
     "modules-left": ["wlr/workspaces"],
     "modules-right": ["temperature","network","battery","custom/cycle_wall","custom/expand","cpu","clock"],
     "modules-center": ["custom/dynamic_pill"],
@@ -26,7 +25,7 @@
     "custom/cycle_wall":{
         "format":"{}",
         "exec": "~/.config/hypr/scripts/tools/expand wall",
-        // "interval": 1,
+        "interval": 1,
         "on-click": "~/.config/hypr/scripts/tools/expand cycle"
     },
     "custom/expand":{
@@ -45,9 +44,6 @@
     },
     "wlr/workspaces": {
         "format": "{icon}"
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -155,6 +151,6 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     }
 }

@@ -1,8 +1,12 @@
 { pkgs, ... }:
 
+let
+  inherit (builtins) fromJSON readFile;
+in
 {
-  xdg.configFile."hypr/components/waybar" = {
-    source = ./waybar;
-    recursive = true;
+  programs.waybar = {
+    enable = true;
+    settings = fromJSON (readFile ./waybar/config);
+    style = (import ./waybar/style.css);
   };
 }

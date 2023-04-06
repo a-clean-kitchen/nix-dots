@@ -1,6 +1,17 @@
 { pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    wlroots
+    wlr-randr
+    wl-clipboard
+    swaylock-effects
+    polkit-gnome
+    iwgtk
+    grim slurp
+    tty-clock
+  ];
+
   xdg.configFile."hypr/hyprland.conf" = {
     source = ./hyprland.conf;
   };

@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    wofi
+  ];
   xdg.configFile."wofi/config".source = ./config;
   xdg.configFile."wofi/style.css".source = ./style.css;
   xdg.configFile."wofi/menu.css".source = ./menu.css;
