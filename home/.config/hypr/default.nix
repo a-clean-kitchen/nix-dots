@@ -6,7 +6,7 @@
     wlr-randr
     wl-clipboard
     swaylock-effects
-    polkit-gnome
+    polkit_gnome
     iwgtk
     grim slurp
     tty-clock
@@ -33,7 +33,7 @@
 
   imports = [
     ./scripts.nix
-    ./component
+    # ./component
   ];
 
 }

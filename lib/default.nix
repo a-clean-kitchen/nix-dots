@@ -1,12 +1,22 @@
-{ pkgs, lib, inputs ? {} }:
+# Shamelessly stolen from Henrik Lissner's dotfiles.
+# They can be found at
+# https://https://github.com/hlissner/dotfiles
+
+{ inputs ? {}, lib, pkgs, ... }:
 
 let
-  inherit (lib) nixosSystem;
-  inherit (inputs.home-manager.lib) homeManagerConfiguration;
+  inherit (lib) makeExtensible attrValues foldr;
+  inherit (modules) mapModules;
+
+  modules = import ./modules.nix {
+    inherit lib;
+    self.attrs = import ./attrs.nix { inherit lib; self = {}; };
+  };
+
+  mylib = makeExtensible (self:
+    with self; mapModules ./.
+      (file: import file { inherit self lib pkgs inputs; }));
 in
-{
-  mkNixOSSystem = { hostname, pkgs, system }:
-    let 
-    
-    in nixosSystem { inherit pkgs; inherit inputs;};
-}
+mylib.extend
+  (self: super:
+    foldr (a: b: a // b) {} (attrValues super))

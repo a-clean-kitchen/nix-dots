@@ -25,12 +25,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";                                   # NUR Packages
-    };
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs @ { self, nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland }: 
+  outputs = inputs @ { self, flake-parts, nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland, ... }:
     let
       user = "qm";
 
@@ -38,23 +36,47 @@
       lib = nixpkgs.lib.extend
         (self: super: { ql = import ./lib { inherit pkgs inputs; lib = self; }; });
 
+      inherit (lib.ql) mapModules mapModulesRec mapHosts mapModulesArgd;
+
       system = "x86_64-linux";
 
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
-    in {
-      nixosConfigurations = (
-        import ./hosts {
-          inherit lib inputs user system;
-        }
-      );
+    in flake-parts.lib.mkFlake { inherit inputs; } {
+      flake  = {
+        # keep library functions in scope
+        inherit lib;
 
-      homeConfigurations = (
-        import ./home {
-          inherit lib inputs user pkgs system;
-        }
-      );
+        # Premade rice configurations
+        preRolledDesktops = mapModules ./rolledDesktops import; # {homeDefaults = self.homeManagerModules.dotfiles;};
+
+        homeManagerModules = 
+          {
+            dotfiles = ./home.nix;
+          } // mapModulesRec ./modules/home-manager import;
+
+        nixosModules = 
+          { base = ./configuration.nix; } // mapModulesRec ./modules/nixos import;
+
+        nixosConfigurations = 
+          import ./nixos-hosts {
+            inherit lib inputs user system pkgs;
+          };
+
+        homeConfigurations =
+          import ./home {
+            inherit lib inputs user system pkgs;
+          };
+      };
+
+      systems = [
+        system
+      ];
+
+      perSystem = { config, self', inputs', pkgs, system, ... }: {
+        devShells = { default = import ./shell.nix { inherit pkgs; }; };
+      };
   };
 }
