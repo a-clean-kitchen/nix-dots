@@ -8,7 +8,6 @@ let nixBin =
 in mkShell {
   buildInputs = [
     git
-    nix-zsh-completions
     nixos-rebuild
     home-manager
   ];
