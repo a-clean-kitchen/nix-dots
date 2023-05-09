@@ -11,7 +11,7 @@
 
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
-      flake = false;
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     doom-emacs = {
@@ -38,15 +38,13 @@
 
       inherit (lib.ql) mapModules mapModulesRec mapHosts mapModulesArgd;
 
-      system = "x86_64-linux";
-
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
     in flake-parts.lib.mkFlake { inherit inputs; } {
       flake  = {
-        # keep library functions in scope
+        # keep lib/ functions in scope
         inherit lib;
 
         # Premade rice configurations
@@ -71,9 +69,7 @@
           };
       };
 
-      systems = [
-        system
-      ];
+      systems = [ "x86_64-linux" ];
 
       perSystem = { config, self', inputs', pkgs, system, ... }: {
         devShells = { default = import ./shell.nix { inherit pkgs; }; };
