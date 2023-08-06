@@ -8,6 +8,6 @@
 # This module sets up spotify and spicetify
 
 let
-  cfg = config.modules.gui-spotify-combo;
+  cfg = config.modules.gui.media.spotify-combo;
 
 in {}

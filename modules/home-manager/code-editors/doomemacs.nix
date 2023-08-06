@@ -5,10 +5,12 @@
   inputs,
   ...
 }:
+# Gonna put this guy on hold since I'm starting to think that
+# emacs is a bit too much for my use case
 
 let
   cfg = config.modules.editors.doomemacs;
-  
+
   inherit (lib) mkEnableOption mkIf;
 in {
   imports = [];

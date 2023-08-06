@@ -11,7 +11,7 @@
 
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     doom-emacs = {
@@ -31,6 +31,7 @@
   outputs = inputs @ { self, flake-parts, nixpkgs, nur, home-manager, emacs-overlay, doom-emacs, hyprland, ... }:
     let
       user = "qm";
+      system = "x86_64-linux";
 
       #Extend lib with personal functions
       lib = nixpkgs.lib.extend
@@ -47,13 +48,11 @@
         # keep lib/ functions in scope
         inherit lib;
 
-        # Premade rice configurations
+        # Premade, riced-out configurations
         preRolledDesktops = mapModules ./rolledDesktops import; # {homeDefaults = self.homeManagerModules.dotfiles;};
 
         homeManagerModules = 
-          {
-            dotfiles = ./home.nix;
-          } // mapModulesRec ./modules/home-manager import;
+          { dotfiles = ./home.nix; } // mapModulesRec ./modules/home-manager import;
 
         nixosModules = 
           { base = ./configuration.nix; } // mapModulesRec ./modules/nixos import;

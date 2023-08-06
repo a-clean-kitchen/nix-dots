@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  inputs,
   ...
 }:
 
@@ -11,7 +12,7 @@ let
   inherit (lib) mkEnableOption mkDefault mkIf;
   inherit (lib.lists) optional;
 in {
-  # imports = []
+  imports = [ inputs.hyprland.homeManagerModules.default ];
   #   ++ optional
   #     (config.wayland.windowManager ? hyprland)
   #     (builtins.getFlake "github:hyprland/hyprland").homeManagerModules.default;
@@ -19,7 +20,10 @@ in {
   options.modules.desktop.hyprland = {
     enable = mkEnableOption "hyprland";
 
-
+    styling = {
+      
+    };
+    #
   };
 
   config = mkIf cfg.enable {

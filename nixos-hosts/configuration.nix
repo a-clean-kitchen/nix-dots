@@ -27,7 +27,7 @@
     initialPassword = "P4ssword!";
   };
   security.sudo.wheelNeedsPassword = false;
-
+  programs.fish.enable = true;
   time.timeZone = "America/New_York";
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -126,7 +126,7 @@
     };
     openssh = {                             # SSH: secure shell (remote connection to shell of server)
       enable = true;
-      forwardX11 = true;                        # local: $ ssh <user>@<ip>
+      settings.X11Forwarding = true;                        # local: $ ssh <user>@<ip>
     };
   };
   security.pam.services.swaylock = {

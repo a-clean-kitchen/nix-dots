@@ -8,9 +8,9 @@
 # This module sets up spotify-tui and spotifyd
 
 let
-  cfg = config.modules.cli-spotify-combo;
+  cfg = config.modules.cli.media.spotify-combo;
 
-  tomlFormat = pkgs.formats.tom { };
+  tomlFormat = pkgs.formats.toml { };
   yamlFormat = pkgs.formats.yaml { };
 
   tuiConfigFile = yamlFormat.generate "config.yml" cfg.tui.settings;

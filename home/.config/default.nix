@@ -1,5 +1,5 @@
 [
-  ./bat
+  # ./bat
   ./btop
   ./cava
   ./dunst
