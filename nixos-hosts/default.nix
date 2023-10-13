@@ -3,6 +3,7 @@
 , user
 , system
 , pkgs
+, preRolledDesktops
 }:
 
 let

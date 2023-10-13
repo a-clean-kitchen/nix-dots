@@ -32,7 +32,8 @@
 
         nixosConfigurations = 
           import ./nixos-hosts {
-            inherit lib inputs user system pkgs preRolledDesktops;
+            inherit lib inputs user system pkgs;
+            inherit (self) preRolledDesktops;
           };
 
         # homeConfigurations =
