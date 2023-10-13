@@ -390,20 +390,6 @@
         "type": "github"
       }
     },
-    "nur": {
-      "locked": {
-        "lastModified": 1683229489,
-        "narHash": "sha256-nYo+WbU2Cz3rJVVTyngN0jMeobhL2r7Kbs9QjaheTGo=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "86bceed8878e4419aac37ad913fb1cec0818c3f6",
-        "type": "github"
-      },
-      "original": {
-        "id": "nur",
-        "type": "indirect"
-      }
-    },
     "ob-racket": {
       "flake": false,
       "locked": {
@@ -507,8 +493,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "nixpkgs": "nixpkgs",
-        "nur": "nur"
+        "nixpkgs": "nixpkgs"
       }
     },
     "rotate-text": {
