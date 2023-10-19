@@ -36,10 +36,10 @@
             inherit (self) preRolledDesktops;
           };
 
-        # homeConfigurations =
-        #   import ./home {
-        #     inherit lib inputs user system pkgs;
-        #   };
+        homeConfigurations =
+          import ./home {
+            inherit lib inputs user system pkgs;
+          };
       };
 
       systems = [ "x86_64-linux" ];
@@ -55,16 +55,6 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-    };
-
-    doom-emacs = {
-      url = "github:nix-community/nix-doom-emacs";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.emacs-overlay.follows = "emacs-overlay";
     };
 
     hyprland = {
